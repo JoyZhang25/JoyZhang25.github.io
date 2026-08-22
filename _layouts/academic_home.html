@@ -202,7 +202,7 @@
                     <div class="letter-window">
                       <div class="letter-track" data-letter-track>
                         {% for media in award.media %}
-                          <figure class="letter-slide" data-letter-slide aria-label="{{ media.label }} of {{ award.media.size }}">
+                          <figure class="letter-slide" data-letter-slide{% if media.autoplay_ms %} data-carousel-duration="{{ media.autoplay_ms }}"{% endif %} aria-label="{{ media.label }} of {{ award.media.size }}">
                             <img src="{{ media.preview | relative_url }}" alt="{{ media.alt }}" {% unless forloop.first %}loading="lazy"{% endunless %} width="{{ media.width }}" height="{{ media.height }}">
                           </figure>
                         {% endfor %}
@@ -329,10 +329,11 @@
           function scheduleAutoplay() {
             stopAutoplay();
             if (!autoplayDelay || slides.length < 2 || document.hidden || window.matchMedia("(prefers-reduced-motion: reduce)").matches || (pauseOnHover && hoverTarget && hoverTarget.matches(":hover"))) return;
+            var slideDelay = Number(slides[index].getAttribute("data-carousel-duration")) || autoplayDelay;
             autoplayTimer = window.setTimeout(function () {
               showSlide(index + 1);
               scheduleAutoplay();
-            }, autoplayDelay);
+            }, slideDelay);
           }
 
           previousButton.addEventListener("click", function () { showSlide(index - 1); scheduleAutoplay(); });
