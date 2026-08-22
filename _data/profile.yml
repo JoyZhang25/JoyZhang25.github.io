@@ -104,7 +104,7 @@ research:
       url: "https://www.chicagobooth.edu/events/stochastic-networks-conference"
     links: []
 
-  - title: "Integro-local CLT for Preferential-Attachment Dynamics on Random Networks"
+  - title: "Integro-local Central Limit Theorem for Preferential-Attachment Dynamics on Random Networks"
     authors:
       - name: "Jingyi Zhang"
     advisor:
