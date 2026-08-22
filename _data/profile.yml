@@ -54,6 +54,14 @@ news:
     internal: true
     suffix: " at the Stochastic Networks Conference 2026."
 
+  - date: "11/04/2025"
+    datetime: "2025-11-04"
+    prefix: "Received a "
+    link_label: "Spring 2026 ARC-ACO Student Fellowship"
+    url: "https://arc.gatech.edu/student-fellowships/"
+    external: true
+    suffix: " for one semester of research support."
+
 research:
   - title: "Scaling Limits of Constant-Stepsize SGD at Flat Minima"
     authors:
