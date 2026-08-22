@@ -7,6 +7,7 @@ A responsive, multi-page academic website built with the existing AcademicPages 
 All public-facing text and links live in one file: `_data/profile.yml`.
 
 - **Biography:** edit the `about` paragraphs.
+- **Homepage news:** add or edit dated items under `news`; the contact line reuses `links.email_label`.
 - **Research:** add or edit entries under `research`.
 - **Computational projects:** add or edit entries under `projects`.
 - **Honors and awards:** add or edit verified entries under `awards`. A featured item uses `featured`, `url`, and a `media` list containing each image's `preview`, `alt`, `width`, and `height`.

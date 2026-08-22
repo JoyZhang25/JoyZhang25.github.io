@@ -23,7 +23,7 @@
     <meta property="og:image:alt" content="{{ p.portrait.alt | escape }}">
 
     <link rel="icon" href="{{ '/images/favicon.svg' | relative_url }}" type="image/svg+xml">
-    <link rel="stylesheet" href="{{ '/assets/css/academic-home.css' | relative_url }}?v=20260822-3">
+    <link rel="stylesheet" href="{{ '/assets/css/academic-home.css' | relative_url }}?v=20260822-4">
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -88,6 +88,19 @@
             <div class="about-copy">
               {% for paragraph in p.about %}<p>{{ paragraph }}</p>{% endfor %}
             </div>
+            {% if p.links.email_label and p.links.email_label != "" %}
+              <p class="about-contact">Contact me at {{ p.links.email_label }}.</p>
+            {% endif %}
+            {% if p.news.size > 0 %}
+              <div class="home-news" aria-labelledby="news-heading">
+                <h2 id="news-heading">News</h2>
+                <ul class="news-list">
+                  {% for item in p.news %}
+                    <li><time datetime="{{ item.datetime }}">{{ item.date }}</time><span aria-hidden="true">: </span>{{ item.prefix }}{% if item.url and item.url != "" %}<a href="{% if item.internal %}{{ item.url | relative_url }}{% else %}{{ item.url }}{% endif %}"{% if item.external %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ item.link_label }}</a>{% else %}{{ item.link_label }}{% endif %}{{ item.suffix }}</li>
+                  {% endfor %}
+                </ul>
+              </div>
+            {% endif %}
             <div class="home-interests" aria-labelledby="interests-heading">
               <h2 id="interests-heading">Research interests</h2>
               <ul>{% for interest in p.research_interests %}<li>{{ interest }}</li>{% endfor %}</ul>
