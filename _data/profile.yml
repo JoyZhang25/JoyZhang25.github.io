@@ -56,8 +56,8 @@ news:
 
   - date: "11/04/2025"
     datetime: "2025-11-04"
-    prefix: "Received research funding through the "
-    link_label: "Spring 2026 ARC-ACO Student Fellowship"
+    prefix: "Awarded research funding through the "
+    link_label: "ARC-ACO Student Fellowship"
     url: "https://arc.gatech.edu/student-fellowships/"
     external: true
     suffix: "."
