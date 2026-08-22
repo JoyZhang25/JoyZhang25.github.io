@@ -411,11 +411,6 @@ p {
   font-size: 0.82rem;
 }
 
-.research-advisor a {
-  color: inherit;
-  font-weight: 650;
-}
-
 .entry-meta {
   display: flex;
   flex-wrap: wrap;

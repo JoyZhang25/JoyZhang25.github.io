@@ -23,7 +23,7 @@
     <meta property="og:image:alt" content="{{ p.portrait.alt | escape }}">
 
     <link rel="icon" href="{{ '/images/favicon.svg' | relative_url }}" type="image/svg+xml">
-    <link rel="stylesheet" href="{{ '/assets/css/academic-home.css' | relative_url }}?v=20260822-6">
+    <link rel="stylesheet" href="{{ '/assets/css/academic-home.css' | relative_url }}?v=20260822-7">
     {% if page.section == "research" %}
       <script id="MathJax-script" defer src="https://cdn.jsdelivr.net/npm/mathjax@4.0.0/tex-mml-chtml.js"></script>
     {% endif %}
@@ -122,7 +122,7 @@
                     {% for author in item.authors %}{% unless forloop.first %}{% if forloop.last %}{% if forloop.length > 2 %}, and {% else %} and {% endif %}{% else %}, {% endif %}{% endunless %}{% if author.name == p.citation_name %}<strong>{{ author.name }}</strong>{% elsif author.url and author.url != "" %}<a href="{{ author.url }}" target="_blank" rel="noopener noreferrer">{{ author.name }}</a>{% else %}{{ author.name }}{% endif %}{% endfor %}
                   </p>
                   {% if item.advisor %}
-                    <p class="research-advisor">Advised by {% if item.advisor.prefix and item.advisor.prefix != "" %}{{ item.advisor.prefix }} {% endif %}{% if item.advisor.url and item.advisor.url != "" %}<a href="{{ item.advisor.url }}" target="_blank" rel="noopener noreferrer">{% endif %}{{ item.advisor.name }}{% if item.advisor.url and item.advisor.url != "" %} <span aria-hidden="true">↗</span></a>{% endif %}</p>
+                    <p class="research-advisor">Advised by {% if item.advisor.prefix and item.advisor.prefix != "" %}{{ item.advisor.prefix }} {% endif %}{% if item.advisor.url and item.advisor.url != "" %}<a href="{{ item.advisor.url }}" target="_blank" rel="noopener noreferrer">{% endif %}{{ item.advisor.name }}{% if item.advisor.url and item.advisor.url != "" %}</a>{% endif %}</p>
                   {% endif %}
                   <p class="entry-meta">
                     {% if item.status and item.status != "" %}<span>{{ item.status }}</span>{% endif %}
