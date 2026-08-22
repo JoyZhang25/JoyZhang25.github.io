@@ -142,6 +142,19 @@ awards:
     url: "https://arc.gatech.edu/student-fellowships/"
 
 teaching:
+  - course: "MATH 7245 · Stochastic Processes and Stochastic Calculus II"
+    role: "Grader"
+    institution: "Georgia Institute of Technology"
+    terms:
+      - label: "Spring 2026"
+      - label: "Spring 2025"
+
+  - course: "MATH 7244 · Stochastic Processes and Stochastic Calculus I"
+    role: "Grader"
+    institution: "Georgia Institute of Technology"
+    terms:
+      - label: "Fall 2025"
+
   - course: "MATH 2551 · Multivariable Calculus"
     role: "Graduate Teaching Assistant"
     institution: "Georgia Institute of Technology"
