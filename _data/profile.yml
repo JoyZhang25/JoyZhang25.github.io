@@ -40,7 +40,7 @@ about:
 news:
   - date: "07/17/2026"
     datetime: "2026-07-17"
-    prefix: "Our new preprint on "
+    prefix: "A new preprint on "
     link_label: "scaling limits of constant-stepsize SGD at flat minima"
     url: "https://arxiv.org/abs/2607.16384"
     external: true
