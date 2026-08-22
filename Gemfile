@@ -11,3 +11,6 @@ end
 
 gem 'github-pages'
 gem 'connection_pool', '2.5.0'
+
+# Keep local builds compatible with the system Ruby shipped by macOS.
+gem 'nokogiri', '~> 1.13.10'

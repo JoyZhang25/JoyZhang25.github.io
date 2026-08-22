@@ -1,0 +1,336 @@
+---
+---
+{% assign p = site.data.profile %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% if page.section == "home" %}
+      <title>{{ p.name }} | {{ p.role }}</title>
+    {% else %}
+      <title>{{ page.title }} | {{ p.name }}</title>
+    {% endif %}
+    <meta name="description" content="{{ p.meta_description | escape }}">
+    <meta name="theme-color" content="#fbfbfa">
+    <link rel="canonical" href="{{ page.url | absolute_url }}">
+
+    <meta property="og:type" content="profile">
+    <meta property="og:title" content="{% if page.section == 'home' %}{{ p.name }} | {{ p.role }}{% else %}{{ page.title }} | {{ p.name }}{% endif %}">
+    <meta property="og:description" content="{{ p.meta_description | escape }}">
+    <meta property="og:url" content="{{ page.url | absolute_url }}">
+    <meta property="og:image" content="{{ p.portrait.path | absolute_url }}">
+    <meta property="og:image:alt" content="{{ p.portrait.alt | escape }}">
+
+    <link rel="icon" href="{{ '/images/favicon.svg' | relative_url }}" type="image/svg+xml">
+    <link rel="stylesheet" href="{{ '/assets/css/academic-home.css' | relative_url }}?v=20260822-3">
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="site-title" href="{{ '/' | relative_url }}"{% if page.section == "home" %} aria-current="page"{% endif %}>{{ p.name }}</a>
+        <nav class="site-nav" aria-label="Primary navigation">
+          <a href="{{ '/research/' | relative_url }}"{% if page.section == "research" %} aria-current="page"{% endif %}>Research</a>
+          <a href="{{ '/projects/' | relative_url }}"{% if page.section == "projects" %} aria-current="page"{% endif %}>Projects</a>
+          <a href="{{ '/awards/' | relative_url }}"{% if page.section == "awards" %} aria-current="page"{% endif %}>Awards</a>
+          <a href="{{ '/teaching/' | relative_url }}"{% if page.section == "teaching" %} aria-current="page"{% endif %}>Teaching</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content" class="site-frame" tabindex="-1">
+      <aside class="profile" aria-label="Profile">
+        <div class="profile-inner">
+          <div class="profile-compact">
+            <img
+              class="profile-photo"
+              src="{{ p.portrait.path | relative_url }}"
+              alt="{{ p.portrait.alt | escape }}"
+              width="164"
+              height="168"
+            >
+            <div class="profile-copy">
+              <p class="profile-name">{{ p.name }}</p>
+              <p class="profile-role">{{ p.role }}</p>
+              <p class="profile-institution">{{ p.institution }}</p>
+              <p class="profile-tagline">{{ p.tagline }}</p>
+            </div>
+          </div>
+
+          <ul class="profile-links" aria-label="Contact and profiles">
+            {% if p.links.email_label and p.links.email_label != "" %}
+              <li class="email-profile-item">
+                <details class="email-disclosure">
+                  <summary><span class="link-icon" aria-hidden="true">@</span><span>Email</span></summary>
+                  <p class="email-address">{{ p.links.email_label }}</p>
+                </details>
+              </li>
+            {% endif %}
+            {% if p.links.scholar and p.links.scholar != "" %}
+              <li><a href="{{ p.links.scholar }}" target="_blank" rel="noopener noreferrer"><span class="link-icon" aria-hidden="true">G</span><span>Google Scholar</span></a></li>
+            {% endif %}
+            {% if p.links.github and p.links.github != "" %}
+              <li><a href="{{ p.links.github }}" target="_blank" rel="noopener noreferrer"><span class="link-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M10.226 17.284c-2.965-.36-5.054-2.493-5.054-5.256 0-1.123.404-2.336 1.078-3.144-.292-.741-.247-2.314.09-2.965.898-.112 2.111.36 2.83 1.01.853-.269 1.752-.404 2.853-.404 1.1 0 1.999.135 2.807.382.696-.629 1.932-1.1 2.83-.988.315.606.36 2.179.067 2.942.72.854 1.101 2 1.101 3.167 0 2.763-2.089 4.852-5.098 5.234.763.494 1.28 1.572 1.28 2.807v2.336c0 .674.561 1.056 1.235.786 4.066-1.55 7.255-5.615 7.255-10.646C23.5 6.188 18.334 1 11.978 1 5.62 1 .5 6.188.5 12.545c0 4.986 3.167 9.12 7.435 10.669.606.225 1.19-.18 1.19-.786V20.63a2.9 2.9 0 0 1-1.078.224c-1.483 0-2.359-.808-2.987-2.313-.247-.607-.517-.966-1.034-1.033-.27-.023-.359-.135-.359-.27 0-.27.45-.471.898-.471.652 0 1.213.404 1.797 1.235.45.651.921.943 1.483.943.561 0 .92-.202 1.437-.719.382-.381.674-.718.944-.943"/></svg></span><span>GitHub</span></a></li>
+            {% endif %}
+            {% if p.links.linkedin and p.links.linkedin != "" %}
+              <li><a href="{{ p.links.linkedin }}" target="_blank" rel="noopener noreferrer"><span class="link-icon" aria-hidden="true">in</span><span>LinkedIn</span></a></li>
+            {% endif %}
+          </ul>
+        </div>
+      </aside>
+
+      <div class="content">
+        {% if page.section == "home" %}
+          <section class="page-section about-section" aria-labelledby="about-heading">
+            <h1 id="about-heading">About me</h1>
+            <div class="about-copy">
+              {% for paragraph in p.about %}<p>{{ paragraph }}</p>{% endfor %}
+            </div>
+            <div class="home-interests" aria-labelledby="interests-heading">
+              <h2 id="interests-heading">Research interests</h2>
+              <ul>{% for interest in p.research_interests %}<li>{{ interest }}</li>{% endfor %}</ul>
+            </div>
+          </section>
+        {% endif %}
+
+        {% if page.section == "research" and p.research.size > 0 %}
+          <section class="page-section" aria-labelledby="research-heading">
+            <h1 id="research-heading">Research</h1>
+            <div class="research-list">
+              {% for item in p.research %}
+                <article class="research-item">
+                  <h2>{{ item.title }}</h2>
+                  <p class="authors">
+                    {% for author in item.authors %}{% unless forloop.first %}{% if forloop.last %}{% if forloop.length > 2 %}, and {% else %} and {% endif %}{% else %}, {% endif %}{% endunless %}{% if author.name == p.citation_name %}<strong>{{ author.name }}</strong>{% elsif author.url and author.url != "" %}<a href="{{ author.url }}" target="_blank" rel="noopener noreferrer">{{ author.name }}</a>{% else %}{{ author.name }}{% endif %}{% endfor %}
+                  </p>
+                  {% if item.advisor %}
+                    <p class="research-advisor">Advised by {% if item.advisor.prefix and item.advisor.prefix != "" %}{{ item.advisor.prefix }} {% endif %}{% if item.advisor.url and item.advisor.url != "" %}<a href="{{ item.advisor.url }}" target="_blank" rel="noopener noreferrer">{% endif %}{{ item.advisor.name }}{% if item.advisor.url and item.advisor.url != "" %} <span aria-hidden="true">↗</span></a>{% endif %}</p>
+                  {% endif %}
+                  <p class="entry-meta">
+                    {% if item.status and item.status != "" %}<span>{{ item.status }}</span>{% endif %}
+                    {% if item.venue and item.venue != "" %}<span>{{ item.venue }}</span>{% endif %}
+                    {% if item.date and item.date != "" %}<time>{{ item.date }}</time>{% endif %}
+                  </p>
+                  {% if item.abstract %}
+                    <div class="entry-abstract" aria-label="Abstract">
+                      {% for paragraph in item.abstract %}<p class="entry-summary">{{ paragraph }}</p>{% endfor %}
+                    </div>
+                  {% else %}
+                    <p class="entry-summary">{{ item.summary }}</p>
+                  {% endif %}
+                  {% if item.award %}
+                    <p class="research-award">
+                      {% if item.award.url and item.award.url != "" %}<a href="{{ item.award.url }}" target="_blank" rel="noopener noreferrer">{% endif %}{{ item.award.label }}{% if item.award.url and item.award.url != "" %} <span aria-hidden="true">↗</span></a>{% endif %}<span aria-hidden="true"> · </span>{{ item.award.venue }}
+                    </p>
+                  {% endif %}
+                  {% if item.links.size > 0 %}
+                    <p class="entry-links" aria-label="Links for {{ item.title | escape }}">
+                      {% for link in item.links %}
+                        {% if link.internal %}<a href="{{ link.url | relative_url }}"{% if link.new_tab %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ link.label }} <span aria-hidden="true">{% if link.new_tab %}↗{% else %}→{% endif %}</span></a>{% else %}<a href="{{ link.url }}" target="_blank" rel="noopener noreferrer">{{ link.label }} <span aria-hidden="true">↗</span></a>{% endif %}
+                      {% endfor %}
+                    </p>
+                  {% endif %}
+                </article>
+              {% endfor %}
+            </div>
+          </section>
+        {% endif %}
+
+        {% if page.section == "projects" and p.projects.size > 0 %}
+          <section class="page-section" aria-labelledby="projects-heading">
+            <h1 id="projects-heading">Computational Projects</h1>
+            <div class="project-list">
+              {% for project in p.projects %}
+                <article class="project-item"{% if project.id and project.id != "" %} id="{{ project.id }}"{% endif %}>
+                  <div class="project-heading">
+                    <h2>{{ project.title }}</h2>
+                    {% if project.github and project.github != "" %}
+                      <a class="project-github" href="{{ project.github }}" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">{ }</span> GitHub <span aria-hidden="true">↗</span></a>
+                    {% endif %}
+                  </div>
+                  <dl class="project-details">
+                    <div><dt>Problem</dt><dd>{{ project.problem }}</dd></div>
+                    <div><dt>Approach</dt><dd>{{ project.method }}</dd></div>
+                    <div><dt>Result / status</dt><dd>{{ project.result }}</dd></div>
+                  </dl>
+                  {% if project.figure.path and project.figure.path != "" %}
+                    <figure class="project-figure">
+                      <img src="{{ project.figure.path | relative_url }}" alt="{{ project.figure.alt | escape }}" width="{{ project.figure.width }}" height="{{ project.figure.height }}" loading="lazy" decoding="async">
+                      <figcaption>{{ project.figure.caption }}</figcaption>
+                    </figure>
+                  {% endif %}
+                  {% if project.tags.size > 0 %}
+                    <ul class="tag-list" aria-label="Technical tags">{% for tag in project.tags %}<li>{{ tag }}</li>{% endfor %}</ul>
+                  {% endif %}
+                </article>
+              {% endfor %}
+            </div>
+          </section>
+        {% endif %}
+
+        {% if page.section == "awards" and p.awards.size > 0 %}
+          <section class="page-section" aria-labelledby="awards-heading">
+            <h1 id="awards-heading">Honors &amp; Awards</h1>
+            {% for award in p.awards %}
+              {% if award.featured %}
+                <article class="featured-award">
+                  <div class="featured-award-copy">
+                    <p class="featured-award-meta">{{ award.year }}</p>
+                    <h2>{{ award.name }}</h2>
+                    <p class="featured-award-institution">{{ award.institution }}</p>
+                    <a class="featured-award-link" href="{{ award.url }}" target="_blank" rel="noopener noreferrer">Conference website <span aria-hidden="true">↗</span></a>
+                  </div>
+                  <div class="letter-carousel award-carousel" data-letter-carousel data-carousel-autoplay="10000" aria-label="{{ award.name }} images">
+                    <div class="letter-window">
+                      <div class="letter-track" data-letter-track>
+                        {% for media in award.media %}
+                          <figure class="letter-slide" data-letter-slide aria-label="{{ media.label }} of {{ award.media.size }}">
+                            <img src="{{ media.preview | relative_url }}" alt="{{ media.alt }}" {% unless forloop.first %}loading="lazy"{% endunless %} width="{{ media.width }}" height="{{ media.height }}">
+                          </figure>
+                        {% endfor %}
+                      </div>
+                      <button class="letter-arrow letter-arrow-previous" type="button" data-letter-previous aria-label="Show previous award image"><span aria-hidden="true">‹</span></button>
+                      <button class="letter-arrow letter-arrow-next" type="button" data-letter-next aria-label="Show next award image"><span aria-hidden="true">›</span></button>
+                    </div>
+                    <div class="letter-controls">
+                      <div class="letter-dots" aria-label="Choose an award image">
+                        {% for media in award.media %}<button type="button" data-letter-dot data-letter-index="{{ forloop.index0 }}" aria-label="Show {{ media.label }}"{% if forloop.first %} aria-current="true"{% endif %}></button>{% endfor %}
+                      </div>
+                      <p class="letter-status"><span data-letter-current>1</span> / {{ award.media.size }}</p>
+                    </div>
+                  </div>
+                </article>
+              {% endif %}
+            {% endfor %}
+            <ol class="compact-list awards-list">
+              {% for award in p.awards %}
+                {% unless award.featured %}
+                  <li>
+                    <time>{{ award.year }}</time>
+                    <div>
+                      <h2>{% if award.url and award.url != "" %}<a href="{{ award.url }}" target="_blank" rel="noopener noreferrer">{% endif %}{{ award.name }}{% if award.url and award.url != "" %} <span aria-hidden="true">↗</span></a>{% endif %}</h2>
+                      <p>{{ award.institution }}</p>
+                    </div>
+                  </li>
+                {% endunless %}
+              {% endfor %}
+            </ol>
+          </section>
+        {% endif %}
+
+        {% if page.section == "teaching" and p.teaching.size > 0 %}
+          <section class="page-section" aria-labelledby="teaching-heading">
+            <h1 id="teaching-heading">Teaching</h1>
+            {% if p.thank_a_teacher.size > 0 %}
+              <div class="thank-a-teacher-list" aria-label="Thank-a-Teacher letters">
+                {% for thank_you in p.thank_a_teacher %}
+                  <article class="thank-a-teacher-feature" data-letter-carousel data-carousel-autoplay="10000" data-carousel-pause-on-hover>
+                    <header class="thank-a-teacher-header"><h2>{{ thank_you.title }}</h2></header>
+                    <div class="letter-carousel">
+                      <div class="letter-window">
+                        <div class="letter-track" data-letter-track>
+                          {% for document in thank_you.documents %}
+                            <figure class="letter-slide" data-letter-slide aria-label="{{ document.label }} of {{ thank_you.count }}">
+                              <img src="{{ document.preview | relative_url }}" alt="{{ document.alt }}" {% unless forloop.first %}loading="lazy"{% endunless %} width="960" height="742">
+                            </figure>
+                          {% endfor %}
+                        </div>
+                        <button class="letter-arrow letter-arrow-previous" type="button" data-letter-previous aria-label="Show previous Thank-a-Teacher note"><span aria-hidden="true">‹</span></button>
+                        <button class="letter-arrow letter-arrow-next" type="button" data-letter-next aria-label="Show next Thank-a-Teacher note"><span aria-hidden="true">›</span></button>
+                      </div>
+                      <div class="letter-controls">
+                        <div class="letter-dots" aria-label="Choose a Thank-a-Teacher note">
+                          {% for document in thank_you.documents %}<button type="button" data-letter-dot data-letter-index="{{ forloop.index0 }}" aria-label="Show {{ document.label }}"{% if forloop.first %} aria-current="true"{% endif %}></button>{% endfor %}
+                        </div>
+                        <p class="letter-status" aria-live="polite"><span data-letter-current>1</span> / {{ thank_you.count }}</p>
+                      </div>
+                    </div>
+                  </article>
+                {% endfor %}
+              </div>
+            {% endif %}
+
+            <div class="teaching-history-heading"><h2>Teaching Experience</h2></div>
+            <ol class="teaching-course-list">
+              {% for item in p.teaching %}
+                <li class="teaching-course-card">
+                  <h3>{{ item.course }}</h3>
+                  <p>{{ item.role }} · {{ item.institution }}</p>
+                  <ul class="teaching-term-list" aria-label="Terms taught">{% for term in item.terms %}<li>{{ term.label }}</li>{% endfor %}</ul>
+                </li>
+              {% endfor %}
+            </ol>
+
+            {% if p.gra_experience %}
+              <aside class="gra-experience" aria-label="Graduate Research Assistant experience">
+                <div>
+                  <h3>{{ p.gra_experience.role }}</h3>
+                  <p>{{ p.gra_experience.institution }}</p>
+                </div>
+                <ul aria-label="Graduate Research Assistant terms">{% for term in p.gra_experience.terms %}<li>{{ term }}</li>{% endfor %}</ul>
+              </aside>
+            {% endif %}
+          </section>
+        {% endif %}
+
+        <footer class="site-footer"><p>© {{ site.time | date: '%Y' }} {{ p.name }}.</p></footer>
+      </div>
+    </main>
+
+    <script>
+      (function () {
+        document.querySelectorAll("[data-letter-carousel]").forEach(function (carousel) {
+          var track = carousel.querySelector("[data-letter-track]");
+          var slides = Array.prototype.slice.call(carousel.querySelectorAll("[data-letter-slide]"));
+          var dots = Array.prototype.slice.call(carousel.querySelectorAll("[data-letter-dot]"));
+          var currentLabel = carousel.querySelector("[data-letter-current]");
+          var previousButton = carousel.querySelector("[data-letter-previous]");
+          var nextButton = carousel.querySelector("[data-letter-next]");
+          var autoplayDelay = Number(carousel.getAttribute("data-carousel-autoplay")) || 0;
+          var pauseOnHover = carousel.hasAttribute("data-carousel-pause-on-hover");
+          var hoverTarget = carousel.querySelector(".letter-window");
+          var autoplayTimer = null;
+          var index = 0;
+
+          function showSlide(nextIndex) {
+            index = (nextIndex + slides.length) % slides.length;
+            track.style.transform = "translateX(-" + (index * 100) + "%)";
+            slides.forEach(function (slide, slideIndex) { slide.setAttribute("aria-hidden", slideIndex === index ? "false" : "true"); });
+            dots.forEach(function (dot, dotIndex) {
+              if (dotIndex === index) dot.setAttribute("aria-current", "true");
+              else dot.removeAttribute("aria-current");
+            });
+            currentLabel.textContent = String(index + 1);
+          }
+
+          function stopAutoplay() {
+            if (autoplayTimer) window.clearTimeout(autoplayTimer);
+            autoplayTimer = null;
+          }
+
+          function scheduleAutoplay() {
+            stopAutoplay();
+            if (!autoplayDelay || slides.length < 2 || document.hidden || window.matchMedia("(prefers-reduced-motion: reduce)").matches || (pauseOnHover && hoverTarget && hoverTarget.matches(":hover"))) return;
+            autoplayTimer = window.setTimeout(function () {
+              showSlide(index + 1);
+              scheduleAutoplay();
+            }, autoplayDelay);
+          }
+
+          previousButton.addEventListener("click", function () { showSlide(index - 1); scheduleAutoplay(); });
+          nextButton.addEventListener("click", function () { showSlide(index + 1); scheduleAutoplay(); });
+          dots.forEach(function (dot) { dot.addEventListener("click", function () { showSlide(Number(dot.getAttribute("data-letter-index"))); scheduleAutoplay(); }); });
+          if (pauseOnHover && hoverTarget) {
+            hoverTarget.addEventListener("mouseenter", stopAutoplay);
+            hoverTarget.addEventListener("mouseleave", scheduleAutoplay);
+          }
+          document.addEventListener("visibilitychange", function () { if (document.hidden) stopAutoplay(); else scheduleAutoplay(); });
+          showSlide(0);
+          scheduleAutoplay();
+        });
+      }());
+    </script>
+  </body>
+</html>
