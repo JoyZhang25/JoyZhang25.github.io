@@ -867,23 +867,27 @@ p {
   grid-template-columns: minmax(0, 1fr) auto;
   align-items: center;
   gap: 1rem 1.5rem;
-  margin-top: 1.35rem;
-  padding: 1rem 0;
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--soft-line);
+  margin-top: 0.8rem;
+  padding: 1rem;
+  border: 1px solid #d7d8d4;
+  border-top: 2px solid var(--accent);
+  border-radius: 4px;
+  background: #fbfaf7;
 }
 
 .gra-experience h3 {
   margin: 0;
   font-family: var(--serif);
-  font-size: 0.94rem;
+  font-size: 1.05rem;
   font-weight: 600;
+  line-height: 1.35;
 }
 
 .gra-experience p {
-  margin: 0.16rem 0 0;
+  margin: 0.42rem 0 0;
   color: var(--muted);
-  font-size: 0.68rem;
+  font-size: 0.72rem;
+  line-height: 1.45;
 }
 
 .gra-experience ul {
@@ -897,15 +901,17 @@ p {
 }
 
 .gra-experience li {
+  border: 1px solid #d0d4d4;
+  border-radius: 999px;
+  padding: 0.22rem 0.5rem;
+  background: #fff;
   color: #535a5f;
-  font-size: 0.68rem;
+  font-size: 0.65rem;
   font-weight: 650;
 }
 
 .gra-experience li + li::before {
-  margin-right: 0.38rem;
-  color: #92979a;
-  content: "·";
+  content: none;
 }
 
 .compact-list p {
