@@ -101,7 +101,8 @@ research:
     award:
       label: "Outstanding Student Poster Award"
       venue: "Stochastic Networks Conference 2026"
-      url: "https://www.chicagobooth.edu/events/stochastic-networks-conference"
+      url: "/awards/"
+      internal: true
     links: []
 
   - title: "Integro-local Central Limit Theorem for Preferential-Attachment Dynamics on Random Networks"
