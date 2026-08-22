@@ -151,7 +151,12 @@ def inspect_sensitive_filenames(files: list[Path], errors: list[str]) -> None:
 
 
 def inspect_image_metadata(errors: list[str], warnings: list[str]) -> int:
-    images = [ROOT / "images" / "profile.jpg"]
+    image_root = ROOT / "images"
+    images = [
+        path
+        for path in image_root.iterdir()
+        if path.is_file() and path.suffix.lower() in {".jpg", ".jpeg", ".png"}
+    ]
     for directory in PUBLIC_IMAGE_ROOTS:
         if directory.exists():
             images.extend(

@@ -18,7 +18,7 @@ The shared page structure is in `_layouts/academic_home.html`; the visual design
 
 ## Replace the profile photo
 
-Replace `images/profile.jpg` with a square or portrait-oriented JPEG using the same filename. A 600 x 600 image or larger works well. Keep the `portrait.alt` text in `_data/profile.yml` accurate.
+Replace the image referenced by `portrait.path` in `_data/profile.yml`, or add a new JPEG under `images/` and update that path. Keep `portrait.alt` accurate, remove camera metadata, and use HTML width and height values matching the image's intrinsic dimensions in `_layouts/academic_home.html`.
 
 ## Update Thank-a-Teacher materials
 
