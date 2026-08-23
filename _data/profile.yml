@@ -154,14 +154,14 @@ awards:
         alt: "Outstanding Student Poster Award certificate presented to Jingyi Zhang at the 2026 Stochastic Networks Conference"
         width: 1584
         height: 1224
-        autoplay_ms: 12000
+        autoplay_ms: 8000
       - label: "Award presentation"
         attribution: "Stochastic Networks Conference 2026"
         preview: "/images/awards/stochastic-networks-2026-award-photo.jpg"
         alt: "Jingyi Zhang holding her Outstanding Student Poster Award certificate at the 2026 Stochastic Networks Conference"
-        width: 1152
-        height: 864
-        autoplay_ms: 5000
+        width: 1151
+        height: 863
+        autoplay_ms: 8000
 
   - name: "Spring 2026 ARC-ACO Student Fellowship"
     institution: "Algorithms and Randomness Center and ACO Program, Georgia Tech"
