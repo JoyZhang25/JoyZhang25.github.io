@@ -13,6 +13,9 @@
     {% endif %}
     <meta name="description" content="{{ p.meta_description | escape }}">
     <meta name="theme-color" content="#fbfbfa">
+    {% if site.google_site_verification %}
+      <meta name="google-site-verification" content="{{ site.google_site_verification }}">
+    {% endif %}
     <link rel="canonical" href="{{ page.url | absolute_url }}">
 
     <meta property="og:type" content="profile">
