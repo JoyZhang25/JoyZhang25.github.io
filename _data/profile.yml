@@ -94,10 +94,10 @@ research:
       - name: "Jingyi Zhang"
       - name: "Debankur Mukherjee"
         url: "https://www.debankur-mukherjee.com/"
-    status: "Ongoing research"
+    status: "Ongoing project"
     venue: ""
     date: ""
-    summary: "Ongoing work on mean-field analysis for a stochastic-network model. Further details will be added when the manuscript is ready for public release."
+    summary: "This project studies large-population limits and long-time behavior in stochastic socio-economic systems with pairwise interactions. Further details will be added when the manuscript is ready for public release."
     award:
       label: "Outstanding Student Poster Award"
       venue: "Stochastic Networks Conference 2026"
