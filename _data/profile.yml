@@ -170,6 +170,12 @@ awards:
     url: "https://arc.gatech.edu/student-fellowships/"
 
 teaching:
+  - course: "MATH 6266 · Linear Statistical Models"
+    role: "Grader"
+    institution: "Georgia Institute of Technology"
+    terms:
+      - label: "Fall 2026"
+
   - course: "MATH 7245 · Stochastic Processes and Stochastic Calculus II"
     role: "Grader"
     institution: "Georgia Institute of Technology"
