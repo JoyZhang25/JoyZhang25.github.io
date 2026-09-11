@@ -64,7 +64,35 @@ news:
     suffix: "."
 
 research:
+  - title: "Uniform-in-Time Boltzmann Mean-Field Limits for Anchored Binary Opinion Dynamics"
+    title_url: "https://arxiv.org/abs/2609.11039"
+    pdf_url: "https://arxiv.org/pdf/2609.11039"
+    authors:
+      - name: "Jingyi Zhang"
+      - name: "Debankur Mukherjee"
+        url: "https://www.debankur-mukherjee.com/"
+    status: "Submitted to The Annals of Applied Probability"
+    venue: "arXiv:2609.11039"
+    date: "September 2026"
+    topics:
+      - "Interacting particle systems"
+      - "Propagation of chaos"
+      - "Heavy-tailed equilibria"
+    abstract:
+      - >-
+        We study a continuous-time opinion model in which agents interact in pairs and each agent has a fixed anchor. At each interaction epoch, both opinions are updated according to a possibly nonlinear rule with random inputs. Under suitable stability and moment assumptions, we establish uniform-in-time propagation of chaos: as the population grows, the joint law of any fixed number of agents converges, uniformly over time, to the corresponding product of the law solving a nonlinear Boltzmann equation. We first obtain a graphical estimate in total variation on finite time intervals, assuming only that the interaction rule is measurable. We extend this approximation uniformly over time by showing that both the finite system and its nonlinear limit converge exponentially fast to their respective stationary laws. We also prove uniform-in-time convergence in Wasserstein distance of order two under a contraction condition in mean square. For this result, we assume either a bounded state space or a drift condition that keeps moments of some order greater than two uniformly bounded.
+      - >-
+        We examine two applications. For an anchored Friedkin-Johnsen model with random coefficients, we derive an affine stochastic recurrence for the stationary deviation of an opinion from its anchor. We use this recurrence to give conditions for sub-Gaussian or power-law tails and to characterize the exponent in the power-law case. We also study a model of biased assimilation, in which agents favor information that agrees with their current opinions. With the anchor and incoming evidence held at neutral values, we determine when an interaction moves an opinion farther from the neutral value, even if it starts close to it. Simulations illustrate the tail predictions and show how a single peak in the opinion distribution can split into two.
+    award:
+      label: "Outstanding Student Poster Award"
+      venue: "Stochastic Networks Conference 2026"
+      url: "/awards/"
+      internal: true
+    links: []
+
   - title: "Scaling Limits of Constant-Stepsize SGD at Flat Minima"
+    title_url: "https://arxiv.org/abs/2607.16384"
+    pdf_url: "https://arxiv.org/pdf/2607.16384"
     authors:
       - name: "Jingyi Zhang"
       - name: "Cheng Mao"
@@ -74,6 +102,10 @@ research:
     status: "Preprint"
     venue: "arXiv:2607.16384"
     date: "July 2026"
+    topics:
+      - "Stochastic optimization"
+      - "Markovian noise"
+      - "Non-Gaussian scaling limits"
     abstract:
       - >-
         For stochastic gradient descent (SGD) with a constant stepsize \(\alpha\), the invariant law of the iterates, centered at a minimizer, describes the behavior of the algorithm over long time horizons. In the strongly convex case, this invariant law has the familiar \(\sqrt{\alpha}\) scaling and a Gaussian limit as \(\alpha \downarrow 0\). We show that this behavior changes fundamentally for convex objectives \(H\) with flat minima and (sub)quadratic tails.
@@ -84,27 +116,9 @@ research:
       - >-
         We show that the invariant law concentrates on the scale \(\alpha^{1/m}\) and that the rescaled iterates converge weakly to the stationary distribution of the stochastic differential equation \[\mathrm{d}Y_t=-h_0(Y_t)\,\mathrm{d}t+\Sigma^{1/2}\,\mathrm{d}B_t,\] where \(h_0\) is the limiting drift at the minimizer and \(\Sigma\) denotes the asymptotic covariance. This recovers the Gaussian limit when \(m=2\) and gives generally non-Gaussian stationary limits in the flat case \(m>2\). Finally, we give corresponding results for coordinate-separable objectives with unequal flatness exponents.
     links:
-      - label: "arXiv"
-        url: "https://arxiv.org/abs/2607.16384"
       - label: "Related computational project"
         url: "/projects/#elo-ratings"
         internal: true
-
-  - title: "Beyond Consensus and Polarization: Boltzmann Mean-Field Limits of Opinion Dynamics"
-    authors:
-      - name: "Jingyi Zhang"
-      - name: "Debankur Mukherjee"
-        url: "https://www.debankur-mukherjee.com/"
-    status: "Ongoing project"
-    venue: ""
-    date: ""
-    summary: "This project studies large-population limits and long-time behavior in stochastic socio-economic systems with pairwise interactions. Further details will be added when the manuscript is ready for public release."
-    award:
-      label: "Outstanding Student Poster Award"
-      venue: "Stochastic Networks Conference 2026"
-      url: "/awards/"
-      internal: true
-    links: []
 
   - title: "Integro-local Central Limit Theorem for Preferential-Attachment Dynamics on Random Networks"
     authors:
