@@ -136,7 +136,7 @@
                   {% endif %}
                   <p class="entry-meta">
                     {% if item.status and item.status != "" %}<span>{{ item.status }}</span>{% endif %}
-                    {% if item.venue and item.venue != "" %}<span>{{ item.venue }}</span>{% endif %}
+                    {% if item.venue and item.venue != "" %}<span>{% if item.venue_url and item.venue_url != "" %}<a class="entry-meta-link" href="{{ item.venue_url }}" target="_blank" rel="noopener noreferrer" aria-label="{{ item.venue | escape }} — view the arXiv abstract page">{{ item.venue }}</a>{% else %}{{ item.venue }}{% endif %}</span>{% endif %}
                     {% if item.date and item.date != "" %}<time>{{ item.date }}</time>{% endif %}
                   </p>
                   {% if item.topics.size > 0 %}
