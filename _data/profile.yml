@@ -73,6 +73,7 @@ research:
         url: "https://www.debankur-mukherjee.com/"
     status: "Preprint"
     venue: "arXiv:2609.11039"
+    venue_url: "https://arxiv.org/abs/2609.11039"
     date: "September 2026"
     topics:
       - "Interacting particle systems"
@@ -102,6 +103,7 @@ research:
         url: "https://www.debankur-mukherjee.com/"
     status: "Preprint"
     venue: "arXiv:2607.16384"
+    venue_url: "https://arxiv.org/abs/2607.16384"
     date: "July 2026"
     topics:
       - "Stochastic optimization"
