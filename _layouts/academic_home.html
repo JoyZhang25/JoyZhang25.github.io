@@ -26,7 +26,7 @@
     <meta property="og:image:alt" content="{{ p.portrait.alt | escape }}">
 
     <link rel="icon" href="{{ '/images/favicon.svg' | relative_url }}" type="image/svg+xml">
-    <link rel="stylesheet" href="{{ '/assets/css/academic-home.css' | relative_url }}?v=20260911-2">
+    <link rel="stylesheet" href="{{ '/assets/css/academic-home.css' | relative_url }}?v=20260911-3">
     {% if page.section == "research" %}
       <script id="MathJax-script" defer src="https://cdn.jsdelivr.net/npm/mathjax@4.0.0/tex-mml-chtml.js"></script>
     {% endif %}
@@ -146,8 +146,12 @@
                   {% endif %}
                   {% if item.abstract %}
                     <details class="abstract-disclosure">
-                      <summary>Abstract</summary>
-                      <div class="entry-abstract">
+                      <summary>
+                        <span class="abstract-label">Abstract</span>
+                        <span class="abstract-action" aria-hidden="true"><span class="abstract-action-more">Read full abstract</span><span class="abstract-action-less">Hide abstract</span><span class="abstract-chevron"></span></span>
+                        <span class="abstract-preview" aria-hidden="true">{{ item.abstract | first }}</span>
+                      </summary>
+                      <div class="entry-abstract" aria-label="Full abstract">
                         {% for paragraph in item.abstract %}<p class="entry-summary">{{ paragraph }}</p>{% endfor %}
                       </div>
                     </details>
