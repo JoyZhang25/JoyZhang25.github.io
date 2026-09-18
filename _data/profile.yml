@@ -115,6 +115,7 @@ research:
     date: "July 2026"
     topics:
       - "Stochastic optimization"
+      - "Non-strongly convex"
       - "Markovian noise"
       - "Non-Gaussian scaling limits"
     abstract:
