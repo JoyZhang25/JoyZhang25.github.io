@@ -87,7 +87,7 @@ research:
       - "Interacting particle systems"
       - "Propagation of chaos"
       - "Heavy-tailed equilibria"
-      - "Biased assimilation"
+      - "Consensus and polarization"
     abstract:
       - >-
         We study a continuous-time opinion model in which agents interact in pairs and each agent has a fixed anchor. At each interaction epoch, both opinions are updated according to a possibly nonlinear rule with random inputs. Under suitable stability and moment assumptions, we establish uniform-in-time propagation of chaos: as the population grows, the joint law of any fixed number of agents converges, uniformly over time, to the corresponding product of the law solving a nonlinear Boltzmann equation. We first obtain a graphical estimate in total variation on finite time intervals, assuming only that the interaction rule is measurable. We extend this approximation uniformly over time by showing that both the finite system and its nonlinear limit converge exponentially fast to their respective stationary laws. We also prove uniform-in-time convergence in Wasserstein distance of order two under a contraction condition in mean square. For this result, we assume either a bounded state space or a drift condition that keeps moments of some order greater than two uniformly bounded.
